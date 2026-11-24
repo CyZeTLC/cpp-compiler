@@ -20,6 +20,8 @@ public class InterpreterCexpr extends InterpreterCint {
                 yield new IntVal(a / b);
             }
 
+            case UnMinusExpr(var e) -> new IntVal(-asInt(eval(e)));
+
             default -> super.eval(expr);
         };
     }

@@ -7,4 +7,5 @@ public class ExprImpl {
     public record SubExpr(Expr left, Expr right) implements Expr {}
     public record MulExpr(Expr left, Expr right) implements Expr {}
     public record DivExpr(Expr left, Expr right) implements Expr {}
+    public record UnMinusExpr(Expr expr) implements Expr {}
 }

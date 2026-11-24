@@ -34,6 +34,11 @@ public class CppCexprAstBuilder extends CPPBaseVisitor<Object>{
     }
 
     @Override
+    public Object visitUnMinusExpr(CPPParser.UnMinusExprContext ctx) {
+        return new UnMinusExpr(asExpr(visit(ctx.eform())));
+    }
+
+    @Override
     public Expr visitIntExpr(CPPParser.IntExprContext ctx) {
         return new IntLiteral(Integer.parseInt(ctx.INT().getText()));
     }
