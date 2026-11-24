@@ -3,7 +3,7 @@ grammar CPP;
 // (eform EOF | COMMENT EOF)*
 cexpr   : eform EOF ;
 
-eform   : '-' INT           #unMinusExpr
+eform   : '-' eform         #unMinusExpr
         | '(' eform ')'     #bracketExpr
         | eform '*' eform   #mulExpr
         | eform '/' eform   #divExpr
