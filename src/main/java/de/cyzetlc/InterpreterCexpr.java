@@ -23,9 +23,4 @@ public class InterpreterCexpr extends InterpreterCint {
             default -> super.eval(expr);
         };
     }
-
-    protected int asInt(Value v) {
-        if (v instanceof IntVal(var val)) return val;
-        throw new RuntimeException("number expected");
-    }
 }
