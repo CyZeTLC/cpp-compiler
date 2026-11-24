@@ -29,6 +29,11 @@ public class CppCexprAstBuilder extends CPPBaseVisitor<Object>{
     }
 
     @Override
+    public Object visitBracketExpr(CPPParser.BracketExprContext ctx) {
+        return asExpr(visit(ctx.eform()));
+    }
+
+    @Override
     public Expr visitIntExpr(CPPParser.IntExprContext ctx) {
         return new IntLiteral(Integer.parseInt(ctx.INT().getText()));
     }
