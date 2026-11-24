@@ -1,13 +1,14 @@
 grammar CPP;
 
-cexpr   : (expr EOF | COMMENT EOF)* ;
+// (eform EOF | COMMENT EOF)*
+cexpr   : eform EOF ;
 
-expr    : '-' INT           #unMinusExpr
-        | '(' expr ')'      #bracketExpr
-        | expr '*' expr     #mulExpr
-        | expr '/' expr     #divExpr
-        | expr '+' expr     #addExpr
-        | expr '-' expr     #subExpr
+eform   : '-' INT           #unMinusExpr
+        | '(' eform ')'     #bracketExpr
+        | eform '*' eform   #mulExpr
+        | eform '/' eform   #divExpr
+        | eform '+' eform   #addExpr
+        | eform '-' eform   #subExpr
         | INT               #intExpr
         ;
 
